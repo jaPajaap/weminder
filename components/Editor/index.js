@@ -2,11 +2,18 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form';
 import { createWeminder } from '../../store/weminders';
+import { Link } from 'react-router'
 
 const WeminderFormComponent = (props) => {
     const {fields: {title, date, time, to, google}, handleSubmit, submitting} = props;
     return (
         <form onSubmit={handleSubmit}>
+            <div className="menu u-flex">
+                <div className="title u-flexGrow1 is-selected">New weminder</div>
+                <Link to="/">
+                    <div className="menuIcon">x</div>
+                </Link>
+            </div>
             <div className="box">
                 <input type="text" placeholder="Title" {...title} />
             </div>
