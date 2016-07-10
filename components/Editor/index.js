@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form';
+import Select from 'react-select';
 import { createWeminder } from '../../store/weminders';
+import { push } from 'react-router-redux'
 
 const WeminderFormComponent = (props) => {
     const {fields: {title, date, time, to, google}, handleSubmit, submitting} = props;
@@ -17,7 +19,13 @@ const WeminderFormComponent = (props) => {
                 <input type="time" placeholder="Time" {...time} />
             </div>
             <div className="box">
-                <input type="text" placeholder="to" {...to} />
+                <Select
+                    options={props.friends}
+                    valueKey="id"
+                    labelKey="name"
+                    {...to}
+                    onBlur={() => to.onBlur(to.value)}
+                />
             </div>
             <div className="box">
                 <input type="checkbox" id="google" {...google} /> <label htmlFor="google">Add to Google Calendar</label>
@@ -38,20 +46,20 @@ const WeminderForm = reduxForm({
 const Editor = (props) => {
     const submit = (values) => {
         props.createWeminder(values)
-        props.history.push('/')
+        props.push('/')
     }
     return (
-        <WeminderForm onSubmit={submit} />
+        <WeminderForm onSubmit={submit} friends={props.friends} />
     )
 }
 
 const mapActionCreators = {
-    createWeminder: (values) => {
-        return createWeminder(values)
-    }
+    createWeminder: (values) => createWeminder(values),
+    push: (route) => push(route)
 }
 
 const mapStateToProps = (state, ownProps) => ({
+    friends: state.user.friends,
     
 })
 
