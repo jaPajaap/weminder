@@ -1,10 +1,11 @@
 import { applyMiddleware, compose, createStore, combineReducers } from 'redux'
 import {reducer as formReducer} from 'redux-form';
+import { routerReducer, syncHistoryWithStore, routerActions, routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import weminders from './weminders'
 import user from './user'
 
-export default () => {
+export default (initialState = {}, history) => {
 
     // ======================================================
     // Store Enhancers
@@ -15,10 +16,13 @@ export default () => {
         enhancers.push(devToolsExtension())
     }
 
+    const middleware = [thunk, routerMiddleware(history)]
+
     const reducers = {
         weminders: weminders,
         user: user,
-        form: formReducer
+        form: formReducer,
+        routing: routerReducer
     }
 
     // ======================================================
@@ -26,8 +30,9 @@ export default () => {
     // ======================================================
     const store = createStore(
         combineReducers(reducers),
+        initialState,
         compose(
-            applyMiddleware(thunk),
+            applyMiddleware(...middleware),
             ...enhancers
         )
     )

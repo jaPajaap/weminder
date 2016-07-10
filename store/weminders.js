@@ -48,7 +48,6 @@ const initialState = [{
 
 const ACTION_HANDLERS = {
     [WEMINDER_CREATED]: (state, action) => {
-        debugger
         return [...state, action.payload]
     }
 }

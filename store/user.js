@@ -16,16 +16,14 @@ export const loginFail = () => {
     }
 }
 
-const initialState = {
-    loggingIn: true
-}
+const initialState = {}
 
 const ACTION_HANDLERS = {
     [LOGIN_SUCCESS]: (state, action) => {
-        return {...state, ...action.payload, loggingIn: false}
+        return {...state, ...action.payload}
     },
     [LOGIN_FAIL]: (state, action) => {
-        return {...state, loggingIn: false}
+        return {...state}
     }
 }
 

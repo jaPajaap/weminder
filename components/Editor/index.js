@@ -36,9 +36,12 @@ const WeminderForm = reduxForm({
 
 
 const Editor = (props) => {
-    console.log(props)
+    const submit = (values) => {
+        props.createWeminder(values)
+        props.history.push('/')
+    }
     return (
-        <WeminderForm onSubmit={props.createWeminder} />
+        <WeminderForm onSubmit={submit} />
     )
 }
 

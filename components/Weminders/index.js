@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Weminder from './Weminder'
-
+import { Link } from 'react-router'
 
 const Weminders = (props) => {
     return (
@@ -9,7 +9,9 @@ const Weminders = (props) => {
             {props.weminders.map(weminder => (
                 <Weminder weminder={weminder} key={weminder.title} />
             ))}
-            <button className="Button Button--fab" type="button">+</button>
+            <Link to="create">
+                <button className="Button Button--fab" type="button">+</button>
+            </Link>
         </div>
     )
 }
