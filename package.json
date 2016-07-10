@@ -21,7 +21,8 @@
     "redux-thunk": "^2.1.0",
     "suitcss-base": "^2.0.0",
     "suitcss-components-button": "^5.0.0",
-    "suitcss-utils-flex": "^1.1.1"
+    "suitcss-utils-flex": "^1.1.1",
+    "redux-form": "^5.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
@@ -37,9 +38,6 @@
     "postcss-easy-import": "^1.0.1",
     "postcss-import": "8.0.2",
     "postcss-loader": "^0.9.1",
-    "react-router": "^2.5.2",
-    "react-router-redux": "^4.0.5",
-    "redux-form": "^5.3.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.15",
     "webpack-dev-server": "^2.1.0-beta.0"
