@@ -3,13 +3,16 @@ import moment from 'moment'
 const WEMINDER_CREATED = 'WEMINDER_CREATED'
 
 export const createWeminder = (values) => {
-    values.from = {
-        name: 'Aimee',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg'
-    }
-    return {
-        type: WEMINDER_CREATED,
-        payload: values
+    return (dispatch, getState) => {
+        const user = getState().user
+        values.from = {
+            name: user.name,
+            avatar: user.picture.data.url
+        }
+        dispatch({
+            type: WEMINDER_CREATED,
+            payload: values
+        })
     }
 }
 
