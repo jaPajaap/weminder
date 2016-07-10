@@ -1,6 +1,6 @@
 import React from 'react'
 import FacebookLogin from 'react-facebook-login';
-import { loginSuccess, loginFail } from '../../store/user';
+import { loginSuccess, loginFail, getFriends } from '../../store/user';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux'
 
@@ -10,6 +10,7 @@ export const Login = (props) => {
             return props.loginFail()
         }
         props.loginSuccess(response)
+        props.getFriends()
         props.push(props.route.query.redirect || '/')
         
     }
@@ -29,6 +30,7 @@ export const Login = (props) => {
 const mapActionCreators = {
     loginFail: () => loginFail,
     loginSuccess: (user) => loginSuccess(user),
+    getFriends: () => getFriends(),
     push: (route) => push(route)
 }
 

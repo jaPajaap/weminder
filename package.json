@@ -17,13 +17,14 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
+    "react-select": "^1.0.0-beta13",
     "redux": "^3.5.2",
     "redux-auth-wrapper": "^0.5.2",
+    "redux-form": "^5.3.1",
     "redux-thunk": "^2.1.0",
     "suitcss-base": "^2.0.0",
     "suitcss-components-button": "^5.0.0",
-    "suitcss-utils-flex": "^1.1.1",
-    "redux-form": "^5.3.1"
+    "suitcss-utils-flex": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",

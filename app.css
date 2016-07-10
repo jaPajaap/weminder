@@ -1,6 +1,7 @@
 @import "suitcss-base";
 @import "suitcss-utils-flex";
 @import "suitcss-components-button";
+@import "react-select/dist/react-select.css";
 
 @custom-media --sm-viewport (min-width:320px) and (max-width:640px);
 @custom-media --md-viewport (min-width:640px) and (max-width:960px);
