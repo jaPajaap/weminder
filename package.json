@@ -1,0 +1,46 @@
+{
+  "name": "weminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server -d -w",
+    "production": "webpack -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.14.1",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "suitcss-utils-flex": "^1.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "install": "^0.8.1",
+    "npm": "^3.10.5",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.1",
+    "postcss-easy-import": "^1.0.1",
+    "postcss-import": "8.0.2",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
+    "react-facebook-login": "^3.1.0",
+    "redux-form": "^5.3.1",
+    "style-loader": "^0.13.1",
+    "suitcss-base": "^2.0.0",
+    "suitcss-components-button": "^5.0.0",
+    "webpack": "^2.1.0-beta.15",
+    "webpack-dev-server": "^2.1.0-beta.0"
+  }
+}

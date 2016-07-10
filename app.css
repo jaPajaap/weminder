@@ -1,0 +1,68 @@
+@import "suitcss-base";
+@import "suitcss-utils-flex";
+@import "suitcss-components-button";
+
+@custom-media --sm-viewport (min-width:320px) and (max-width:640px);
+@custom-media --md-viewport (min-width:640px) and (max-width:960px);
+@custom-media --lg-viewport (min-width:960px);
+
+:root {
+  --primaryColor: orange;
+}
+
+
+html,
+body {
+    margin: 30px;
+    height: 100%;
+    font-family: Quicksand;
+    background-color: lightgrey;
+    text-transform: uppercase;
+}
+
+#app {
+	width: 500px;
+	margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+
+.weminder {
+	background-color: #fff;
+	padding: 20px;
+}
+
+.weminderTitle {
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 2px;
+
+}
+
+.weminderDate {
+	font-size: 15px;
+}
+
+.weminderAvatar {
+	border-radius: 50%;
+	width: 50px;
+}
+
+
+.Button--fab {
+	border-radius: 50%;
+	background-color: var(--primaryColor);
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	width: 50px;
+	height: 50px;
+	border: none;
+}
+
+.box {
+	padding: 10px;
+}
